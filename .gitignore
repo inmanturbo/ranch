@@ -1,0 +1,9 @@
+.terraform
+*.tfstate
+*.backup
+*.img
+*.qcow2
+*.iso
+id_rsa
+id_rsa*
+mini.iso
