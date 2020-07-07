@@ -1,4 +1,4 @@
-PROJECT := simple
+PROJECT := rancher
 
 apply:
 	terraform apply -auto-approve -var="memoryMB=8192" -var="cpu=2" -var="pool=QWPro" -var="hostname=rancher"
