@@ -1,6 +1,7 @@
 PROJECT := rancher
 
 apply:
+	echo "This will take about 5 minutes ..."
 	terraform apply -auto-approve -var="memoryMB=8192" -var="cpu=2" -var="pool=QWPro" -var="hostname=rancher"
 
 init:
@@ -22,7 +23,7 @@ create-keypair:
 ssh:
 	ssh root@virthost.qwlocal "virsh reboot rancher"
 	echo 'rebooting host . . .'
-	sleep 30
+	sleep 35
 	ssh-keygen -f ~/.ssh/known_hosts -R rancher.qwlocal
 	sudo systemd-resolve --flush-caches
 	sudo systemctl restart dnsmasq.service
